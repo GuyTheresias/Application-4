@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Haitian Palates
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #101010, #2c2c2c);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #countries {
+            background-color: #bea25f;
+        }
+
+        .flag {
+            width: 250px;
+            height: 150px;
+        }
+
+        .imgs {
+            width: 400px;
+            height: 300px;
+        }
+
+        .imgs:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+
+        .payments {
+            width: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="navbar">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="#">
+                    <img src="Imgs/Logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container rounded mt-5 p-5 border border-dark" id="countries">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="Countries.html">
+                    <img src="Imgs/Haitian Flag.png" alt="Haitian Flag" class="flag img img-fluid">
+                </a>
+                <h3>Haitian Palates</h3>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <img src="Haiti Imgs/Bay Leaves.webp" alt="Bay Leaves" class="imgs img img-fluid" onclick="bayLeaves()">
+                <h3>Bay Leaves (11.86/lbs)</h3>
+                <span hidden id="span1">
+                    <label for="Bay Leaves">Amount:</label>
+                    <input type="number" id="bayLeaves" min="0" max="5">
+                </span>
+            </div>
+            <div class="col-md-4">
+                <img src="Haiti Imgs/Callaloo.jpg" alt="Callaloo" class="imgs img img-fluid" onclick="callaloo()">
+                <h3>Callaloo (3.50/lbs)</h3>
+                <span hidden id="span2">
+                    <label for="Callaloo">Amount:</label>
+                    <input type="number" id="callaloo" min="0" max="5">
+                </span>
+            </div>
+            <div class="col-md-4">
+                <img src="Haiti Imgs/Dwarf Orinoco.webp" alt="Dwarf Orinoco" class="imgs img img-fluid"
+                    onclick="dwarfOrinoco()">
+                <h3>Dwarf Orinoco (87.95/2-3 feet)</h3>
+                <span hidden id="span3">
+                    <label for="Dwarf Orinoco">Amount:</label>
+                    <input type="number" id="dwarfOrinoco" min="0" max="5">
+                </span>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-6">
+                <img src="Haiti Imgs/Epis.webp" alt="Epis" class="imgs img img-fluid" onclick="epis()">
+                <h3>Epis (oz)</h3>
+                <span hidden id="span4">
+                    <label for="Sizes">Size:</label>
+                    <input type="radio" id="8oz" name="Sizes" checked> 8oz
+                    <input type="radio" id="12oz" name="Sizes"> 12oz
+                    <input type="radio" id="16oz" name="Sizes"> 16oz
+                    <br>
+                </span>
+                <span hidden id="span5">
+                    <label for="episAmount">Amount:</label>
+                    <input type="number" id="episAmount" min="0" max="5">
+                </span>
+
+
+            </div>
+            <div class="col-md-6">
+                <img src="Haiti Imgs/Malanga.webp" alt="Malanga" class="imgs img img-fluid" onclick="malanga()">
+                <h3>Malanga (9.99/lbs)</h3>
+                <span hidden id="span6">
+                    <label for="alanga">Amount:</label>
+                    <input type="number" id="malanga" min="0" max="5">
+                </span>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <h3>
+                    Personal Info:
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="text" id="name" placeholder="Enter Your Name...">
+                <br>
+                <input type="text" id="lname" placeholder="Enter Your Last Name...">
+                <br>
+                <input type="email" id="email" placeholder="Enter Your Email...">
+                <br>
+                <input type="text" id="address" placeholder="Enter Your Address...">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <h3>Payment Method:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="radio" name="payment" id="inStore" value="In Store" checked> In Store
+                <input type="radio" name="payment" id="online" value="Online"> Online
+                <input type="radio" name="payment" id="byPhone" value="By Phone"> By Phone
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="radio" name="paymentType" id="cash" value="Cash" checked><img src="Payment Types/Cash-removebg-preview.png"
+                    alt="Cash" class="payments">
+                <input type="radio" name="paymentType" id="visaCard" value="Visa Card"><img
+                    src="Payment Types/VISA-Logo-2000-removebg-preview.png" alt="Visa Card" class="payments">
+                <input type="radio" name="paymentType" id="masterCard" value="Master Card"><img
+                    src="Payment Types/Mastercard.png" alt="Master Card" class="payments">
+                <input type="radio" name="paymentType" id="americanExpress" value="Pay Pal"><img
+                    src="Payment Types/PayPal-removebg-preview.png" alt="Payment Pal" class="payments">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="text-secondary"><b>(This applies to all the countries)</b></p>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark" onclick="sendHaitiInfo()">
+                    Submit Order
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark" onclick="reset()">
+                    Reset
+                </button>
+                <p class="text-danger"><b>Warning: You will lose your order</b></p>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark" onclick="window.open('Order.html', '_self')">
+                    View Receipt
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

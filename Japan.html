@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Japanese Palates
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #101010, #2c2c2c);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #countries {
+            background-color: #bea25f;
+        }
+
+        .flag {
+            width: 250px;
+            height: 150px;
+        }
+
+        .imgs {
+            width: 400px;
+            height: 300px;
+        }
+
+        .imgs:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+
+        .imgs2 {
+            width: 500px;
+            height: 450px;
+        }
+
+        .imgs2:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+            transition: 0.5s;
+        }
+        .payments {
+            width: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid" id="navbar">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="#">
+                    <img src="Imgs/Logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container rounded mt-5 p-5 border border-dark" id="countries">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="Countries.html">
+                    <img src="Imgs/Japanese Flag.png" alt="Japanese Flag" class="flag img img-fluid" >
+                </a>
+                <h3>Japanese Palates</h3>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <img src="Japan Imgs/Daikon.webp" alt="Daikon" class="imgs img img-fluid" onclick="daikon()">
+                <h3>Daikon (5-8 in)</h3>
+                <span hidden id="span1">
+                    <label for="Daikon">Amount:</label>
+                    <input type="number" id="daikon" min="0" max="5">
+                </span>
+            </div>
+            <div class="col-md-4">
+                <img src="Japan Imgs/Eel.png" alt="Eel" class="imgs img img-fluid" onclick="eel()">
+                <h3>Live Eel (1.9-2.1 lbs)</h3>
+                <span hidden id="span2">
+                    <label for="Eel">Amount:</label>
+                    <input type="number" id="eel" min="0" max="5">
+                </span>
+            </div>
+            <div class="col-md-4">
+                <img src="Japan Imgs/Miso.png" alt="Miso" class="imgs img img-fluid" onclick="miso()">
+                <h3>Miso (750g)</h3>
+                <span hidden id="span3">
+                    <label for="Miso">Amount:</label>
+                    <input type="number" id="miso" min="0" max="5">
+                </span>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-6">
+                <img src="Japan Imgs/Soy Sauce.png" alt="Soy Sauce" class="imgs2 img-fluid" onclick="soySauce()">
+                <h3>Soy Sauce</h3>
+                <span hidden id="span4">
+                    <label for="Sizes">Amount:</label>
+                    <input type="radio" id="50ml" name="Sizes" checked>50 ml
+                    <input type="radio" id="250ml" name="Sizes">250 ml
+                    <input type="radio" id="750ml" name="Sizes">750 ml
+                    <br>
+                </span>
+                <span hidden id="span5">
+                    <label for="Soy Sauce">Amount:</label>
+                    <input type="number" id="soySauceAmount" min="0" max="5">
+                </span>
+            </div>
+            <div class="col-md-6">
+                <img src="Japan Imgs/Wakame Seaweed.png" alt="Wakame Seaweed" class="imgs2 img img-fluid" onclick="wakame()">
+                <h3>Wakame Seaweed (16g)</h3>
+                <span hidden id="span6">
+                    <label for="Wakame Seaweed">Amount:</label>
+                    <input type="number" id="wakameSeaweed" min="0" max="5">
+                </span>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <h3>
+                    Personal Info:
+                </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="text" id="name" placeholder="Enter Your Name...">
+                <br>
+                <input type="text" id="lname" placeholder="Enter Your Last Name...">
+                <br>
+                <input type="email" id="email" placeholder="Enter Your Email...">
+                <br>
+                <input type="text" id="address" placeholder="Enter Your Address...">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center mt-3">
+                <h3>Payment Method:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="radio" name="payment" id="inStore" value="In Store" checked> In Store
+                <input type="radio" name="payment" id="online" value="Online"> Online
+                <input type="radio" name="payment" id="byPhone" value="By Phone"> By Phone
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <input type="radio" name="paymentType" id="cash" value="Cash" checked><img src="Payment Types/Cash-removebg-preview.png" alt="Cash" class="payments">
+                <input type="radio" name="paymentType" id="visaCard" value="Visa Card"><img src="Payment Types/VISA-Logo-2000-removebg-preview.png" alt="Visa Card" class="payments">
+                <input type="radio" name="paymentType" id="masterCard" value="Master Card"><img src="Payment Types/Mastercard.png" alt="Master Card" class="payments">
+                <input type="radio" name="paymentType" id="americanExpress" value="Pay Pal"> <img src="Payment Types/PayPal-removebg-preview.png" alt="Payment Pal" class="payments">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="text-secondary"><b>(This applies to all the countries)</b></p>
+            </div>
+        </div>
+        <div class="row text-center mt-5">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark border border-dark" onclick="sendJapanInfo()">
+                    Submit Info
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark border border-dark" onclick="reset()">
+                    Reset
+                </button>
+                <p class="text-danger"><b>Warning: You will lose your order</b></p>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-dark border border-dark" onclick="window.open('Order.html', '_self')">
+                    View Receipt
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

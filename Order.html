@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exotic Flavor Order</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+    <script src="index.js" defer></script>
+    <style>
+        body {
+            background-image: linear-gradient(to right, #101010, #2c2c2c);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #countries {
+            background-color: #bea25f;
+        }
+
+        #cHaiti {
+            background-image: linear-gradient(to bottom, #00209f, #d21034);
+        }
+
+        #cItaly {
+            background-image: linear-gradient(to right, #007a5e, #ffffff, #ce1126);
+        }
+
+        #cJapan {
+            background-image: linear-gradient(to right, #ffffff, #bc002d, #ffffff);
+        }
+
+        .haiti1 {
+            color: #9b7b04;
+        }
+
+        .haiti2 {
+            color: #10d2ae;
+        }
+
+        .haiti3 {
+            color: #cfd210;
+        }
+
+        .italy1 {
+            color: #7a001c;
+        }
+
+        .italy2 {
+            color: #1172ce;
+        }
+
+        .italy3 {
+            color: #21007a;
+        }
+
+        .japan1 {
+            color: #200e10;
+        }
+
+        .japan2 {
+            color: #c3ca56;
+        }
+
+        .japan3 {
+            color: #5694ca;
+        }
+    </style>
+</head>
+
+<body onload="loadReceipt()">
+    <div class="container-fluid" id="navbar">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <a href="#">
+                    <img src="Imgs/Logo.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container rounded mt-5 p-5 border border-dark" id="countries">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="container rounded mt-5 p-5 border border-dark" id="cHaiti">
+                    <h1 class="haiti1 text-center ">Haiti</h1>
+                    <h3 class="haiti1 text-center">Haitian Palates</h3>
+                    <h5 class="haiti1">Amount of Ingredients</h5>
+                    <ul>
+                        <li class="haiti2">Bay Leaves amount: <span class="haiti3" id="bayLeavesA"></span></li>
+                        <li class="haiti2">Callaloo amount: <span class="haiti3" id="callalooA"></span></li>
+                        <li class="haiti2">Dwarf Orinoco amount: <span class="haiti3" id="dwarfOrinocoA"></span></li>
+                        <li class="haiti2">Epis amount: <span class="haiti3" id="episA"></span></li>
+                        <li class="haiti2">Malanga amount: <span class="haiti3" id="malangaA"></span></li>
+                    </ul>
+                    <h5 class="haiti1">Unit Cost of Ingredients</h5>
+                    <ul>
+                        <li class="haiti2">Bay Leaves cost: <span class="haiti3" id="bayLeavesC"></span></li>
+                        <li class="haiti2">Callaloo cost: <span class="haiti3" id="callalooC"></span></li>
+                        <li class="haiti2">Dwarf Orinoco cost: <span class="haiti3" id="dwarfOrinocoC"></span></li>
+                        <li class="haiti2">Epis cost: <span class="haiti3" id="episC"></span></li>
+                        <li class="haiti2">Malanga cost: <span class="haiti3" id="malangaC"></span></li>
+                    </ul>
+                    <h5 class="haiti1">Cost of Ingredients</h5>
+                    <ul>
+                        <li class="haiti2">Bay Leaves total: <span class="haiti3" id="bayLeavesT"></span></li>
+                        <li class="haiti2">Callaloo total: <span class="haiti3" id="callalooT"></span></li>
+                        <li class="haiti2">Dwarf Orinoco total: <span class="haiti3" id="dwarfOrinocoT"></span></li>
+                        <li class="haiti2">Epis total: <span class="haiti3" id="episT"></span></li>
+                        <li class="haiti2">Malanga total: <span class="haiti3" id="malangaT"></span></li>
+                    </ul>
+                    <h5 class="haiti1">Total Cost: <span class="haiti3" id="haitiTotal"></span></h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container rounded mt-5 p-5 border border-dark" id="cItaly">
+                    <h1 class="italy1 text-center">Italy</h1>
+                    <h3 class="italy1 text-center">Italian Palates</h3>
+                    <h5 class="italy1">Amount of Ingredients</h5>
+                    <ul>
+                        <li class="italy2">Ciabatta Bread amount: <span class="italy3" id="breadA"></span></li>
+                        <li class="italy2">Parmigiano-Reggiano amount: <span class="italy3"
+                                id="parmigianoReggianoA"></span></li>
+                        <li class="italy2">Olive Oil amount: <span class="italy3" id="oliveOilA"></span></li>
+                        <li class="italy2">Salami Emiliano amount: <span class="italy3" id="salamiA"></span></li>
+                        <li class="italy2">Italian Wine amount: <span class="italy3" id="wineA"></span></li>
+                    </ul>
+                    <h5 class="italy1">Unit Cost of Ingredients</h5>
+                    <ul>
+                        <li class="italy2">Ciabatta Bread cost: <span class="italy3" id="breadC"></span></li>
+                        <li class="italy2">Parmigiano-Reggiano cost: <span class="italy3"
+                                id="parmigianoReggianoC"></span></li>
+                        <li class="italy2">Olive Oil cost: <span class="italy3" id="oliveOilC"></span></li>
+                        <li class="italy2">Salami Emiliano cost: <span class="italy3" id="salamiC"></span></li>
+                        <li class="italy2">Italian Wine cost: <span class="italy3" id="wineC"></span></li>
+                    </ul>
+                    <h5 class="italy1">Cost of Ingredients</h5>
+                    <ul>
+                        <li class="italy2">Ciabatta Bread total: <span class="italy3" id="breadT"></span></li>
+                        <li class="italy2">Parmigiano-Reggiano total: <span class="italy3"
+                                id="parmigianoReggianoT"></span></li>
+                        <li class="italy2">Olive Oil total: <span class="italy3" id="oliveOilT"></span></li>
+                        <li class="italy2">Salami Emiliano total: <span class="italy3" id="salamiT"></span></li>
+                        <li class="italy2">Italian Wine total: <span class="italy3" id="wineT"></span></li>
+                    </ul>
+                    <h5 class="italy1">Total Cost: <span class="italy3" id="italyTotal"></span></h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="container rounded mt-5 p-5 border border-dark" id="cJapan">
+                    <h1 class="japan1 text-center">Japan</h1>
+                    <h3 class="japan1 text-center">Japanese Palates</h3>
+                    <h5 class="japan1">Amount of Ingredients</h5>
+                    <ul>
+                        <li class="japan2">Daikon amount: <span class="japan3" id="daikonA"></span></li>
+                        <li class="japan2">Live Eel amount: <span class="japan3" id="eelA"></span></li>
+                        <li class="japan2">Miso amount: <span class="japan3" id="misoA"></span></li>
+                        <li class="japan2">Soy Sauce amount: <span class="japan3" id="soySauceA"></span></li>
+                        <li class="japan2">Wakame Seaweed amount: <span class="japan3" id="seaweedA"></span></li>
+                    </ul>
+                    <h5 class="japan1">Unit Cost of Ingredients</h5>
+                    <ul>
+                        <li class="japan2">Daikon cost: <span class="japan3" id="daikonC"></span></li>
+                        <li class="japan2">Live Eel cost: <span class="japan3" id="eelC"></span></li>
+                        <li class="japan2">Miso cost: <span class="japan3" id="misoC"></span></li>
+                        <li class="japan2">Soy Sauce cost: <span class="japan3" id="soySauceC"></span></li>
+                        <li class="japan2">Wakame Seaweed cost: <span class="japan3" id="seaweedC"></span></li>
+                    </ul>
+                    <h5 class="japan1">Cost of Ingredients</h5>
+                    <ul>
+                        <li class="japan2">Daikon total: <span class="japan3" id="daikonT"></span></li>
+                        <li class="japan2">Live Eel total: <span class="japan3" id="eelT"></span></li>
+                        <li class="japan2">Miso total: <span class="japan3" id="misoT"></span></li>
+                        <li class="japan2">Soy Sauce total: <span class="japan3" id="soySauceT"></span></li>
+                        <li class="japan2">Wakame Seaweed total: <span class="japan3" id="seaweedT"></span></li>
+                    </ul>
+                    <h5 class="japan1">Total Cost: <span class="japan3" id="japanTotal"></span></h5>
+                </div>
+            </div>
+        </div>
+        <div class="row" hidden id="reciept">
+            <div class="col-md-12 text-center mt-3">
+                <H2>Reciept:</H2>
+                <p>Name: <b><span id="name"></span></b></p>
+                <p>Last Name: <b><span id="lastName"></span></b></p>
+                <p>Email: <b><span id="email"></span></b></p>
+                <p>Address: <b><span id="address"></span></b></p>
+                <p>Form of Payment: <b><span id="formOfPayment"></span></b></p>
+                <p>Payment Method: <b><span id="paymentMethod"></span></b></p>
+                <p>Total Cost: <b><span id="totalCost"></span></b></p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-dark border border-dark" onclick="window.open('Countries.html', '_self')">
+                    Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
